@@ -19,7 +19,9 @@ Ao estudar **programação básica**, não estamos apenas aprendendo a instruir 
 ## Objetivo
 
 Conectar **fundamentos da programação básica** com elementos da **cognição humana**, de forma prática, filosófica e técnica.
+
 Se aprondudar de varias formas não apenas em **PROGRAMAÇÃO** mais em como se tornar um bom profissional.
+
 Abordar ao maximo conseitos de **programação** e **soft skills**
 
 ---
