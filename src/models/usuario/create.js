@@ -1,5 +1,5 @@
-import { executar } from "../../../utils/mysql.js";
-import { log } from "../../../utils/log.js";
+import { executar } from "../../utils/mysql.js";
+import { log } from "../../utils/log.js";
 
 export async function modelsUsuarioCreate({ nome, email, senha }) {
     try {

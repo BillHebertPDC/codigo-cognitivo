@@ -1,5 +1,5 @@
-import { log } from "../../../utils/log.js";
-import { servicesUsuarioUpdate } from "../../../services/usuario/update.js";
+import { log } from "../../utils/log.js";
+import { servicesUsuarioUpdate } from "../../services/usuario/update.js";
 export const controllersUsuarioUpdate = async (req, res, next) => {
     try {
         const PARAMETROS = req.params;
