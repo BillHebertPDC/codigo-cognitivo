@@ -3,7 +3,7 @@ import { log } from "../../utils/log.js";
 
 export async function modelsUsuarioCreate({ nome, email, senha }) {
     try {
-        let instrucao = `insert into usuarios(nome, email, senha) VALUES ("${nome}","${email}","${senha}");`
+        let instrucao = `insert into usuario(nome, email, senha) VALUES ("${nome}","${email}","${senha}");`
         return await executar(instrucao)
     } catch (e) {
         log(import.meta.url, e)
