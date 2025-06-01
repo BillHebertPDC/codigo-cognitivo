@@ -5,10 +5,10 @@ import { controllersPostagemCodigoDelete } from "../../../controllers/postagem/c
 import { controllersPostagemCodigoRead } from "../../../controllers/postagem/codigo/read.js"
 
 const routerPostagemCodigoIndex = express.Router();
-routerPostagemCodigoIndex.post("/codigo", controllersPostagemCodigoCreate)
-routerPostagemCodigoIndex.put("/codigo", controllersPostagemCodigoUpdate)
-routerPostagemCodigoIndex.delete("/codigo", controllersPostagemCodigoDelete)
-routerPostagemCodigoIndex.get("/codigo/:dificuldade?/:id?", controllersPostagemCodigoRead)
+routerPostagemCodigoIndex.post("/", controllersPostagemCodigoCreate)
+routerPostagemCodigoIndex.put("/", controllersPostagemCodigoUpdate)
+routerPostagemCodigoIndex.delete("/", controllersPostagemCodigoDelete)
+routerPostagemCodigoIndex.get("/:dificuldade?/:id?", controllersPostagemCodigoRead)
 
 
 export default routerPostagemCodigoIndex
