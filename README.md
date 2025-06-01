@@ -32,20 +32,20 @@ Abordar ao maximo conseitos de **programação** e **soft skills**
 
 ## Estrutura do Projeto
 
-app
-    app.js
-    app-middlewares.js
-    app-routes.js
-    app-session.js
-    app-static.js
-controllers
-middlewares
-models
-routes
-services
-test
-utils
-validations
+- app
+-     app.js
+-     app-middlewares.js
+-     app-routes.js
+-     app-session.js
+-     app-static.js
+- controllers
+- middlewares
+- models
+- routes
+- services
+- test
+- utils
+- validations
 
 ## Estrutura do Projeto - Explicação
 tentar manter ao maximo os principios modulares, manuteníveis, testáveis e escaláveis
