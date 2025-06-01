@@ -7,10 +7,13 @@ Este repositório é parte de um projeto pessoal-acadêmico onde exploro o conce
 **Código-cognitivo** é a ideia de que nosso cérebro opera com um conjunto de instruções, padrões e mecanismos mentais — como um código-fonte que define como percebemos, pensamos, decidimos e agimos.
 
 Ao estudar **programação básica**, não estamos apenas aprendendo a instruir máquinas — estamos modelando (ou reescrevendo) nossos próprios processos mentais:
+---
 
 > _Programar é escrever algoritmos que também moldam a mente de quem os escreve._
+---
 
 > _Programar é trazer a existencia daquido que ainda não existe_
+---
 
 > _Programar é trazer ao mundo algo que ainda só está em nossas mentes_
 
