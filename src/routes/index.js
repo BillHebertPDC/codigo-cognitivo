@@ -1,5 +1,5 @@
 import express from "express"
-import routerPostagemCodigoIndex from "./postagem/codigo/index.js";
+import routerPostagemIndex from "./postagem/index.js";
 const routerIndex = express.Router();
-routerIndex.use("/postagem", routerPostagemCodigoIndex)
+routerIndex.use("/postagem", routerPostagemIndex)
 export default routerIndex
