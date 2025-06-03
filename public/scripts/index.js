@@ -1,3 +1,4 @@
+
 const fluxo_tecnico = {
     "Tecnico": {
         index: 0,
@@ -1259,6 +1260,36 @@ document.getElementById('loginForm').addEventListener('submit', async function (
         quizButton.style.display = ""
         dashButton.style.display = ""
         sessionStorage.CCN = JSON.stringify(res)
+        number_interesse.innerHTML = `${res.token.interesse[0]["count(*)"]}`
+        number_acertos.innerHTML = `%${res.token.max[0]["max(pontuacao)"]}`
+
+        const skillsCtx = document.getElementById("quizz_acertividade").getContext('2d');
+        new Chart(skillsCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['ACERTO', "ERRO"],
+                datasets: [{
+                    data: [Number(res.token.max[0]["max(pontuacao)"]) - (100 % Number(res.token.max[0]["max(pontuacao)"])), 100 % Number(res.token.max[0]["max(pontuacao)"])],
+                    backgroundColor: [
+                        '#00f5ff',
+                        '#00d4aa'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#ffffff',
+                            font: { size: 11 }
+                        }
+                    }
+                }
+            }
+        });
     } else {
         showMessage("loginErrorMessage")
         loginErrorMessage.style.display = "flex"
@@ -1480,7 +1511,7 @@ function nextQuestion() {
         } else {
             showResults();
             let user = JSON.parse(sessionStorage.CCN)
-            fetch("quizz", {
+            fetch("/quizz", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"
@@ -1546,12 +1577,15 @@ window.onload = initQuiz;
 
 quizButton.addEventListener("click", async () => {
     pageInicio.style.display = "none"
+    pagedash.style.display = "none"
     pageQuiz.style.display = ""
 })
 
 inicioButton.addEventListener('click', async () => {
     pageInicio.style.display = ""
     pageQuiz.style.display = "none"
+    pagedash.style.display = "none"
+
 })
 
 dashButton.addEventListener("click", async () => {
@@ -1636,3 +1670,4 @@ new Chart(salaryCtx, {
         }
     }
 });
+

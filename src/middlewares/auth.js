@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-let safe_routes = ["/postagem/codigo","/postagem/conteudo","/usuario","/usuario/auth"]
+let safe_routes = ["/postagem/codigo","/postagem/conteudo","/usuario","/usuario/auth","/quizz"]
 let safe_routes_get = ["/postagem/codigo"]
 export async function Auth(req, res, next) {
     const token = req.header('Authorization')?.replace('Bearer ', '');
