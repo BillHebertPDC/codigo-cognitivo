@@ -1,8 +1,12 @@
 import { modelsUsuarioUpdate } from "../../models/usuario/update.js"
 import { log } from "../../utils/log.js"
-export const servicesUsuarioUpdate = async ({ nome, email, senha, id }) => {
+import bcrypt from "bcrypt"
+
+export const servicesUsuarioUpdate = async ({ email }) => {
     try {
-        return await modelsUsuarioUpdate({ nome: nome, email: email, senha: senha, id: id })
+        const saltRounds = 12
+        const senhaHash = await bcrypt.hash(email, saltRounds)
+        return await modelsUsuarioUpdate({ email: email, senha: senhaHash })
     } catch (e) {
         log(import.meta.url, e)
         throw e + " ERROR SERVICES "

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código Cognitivo - Programação Básica Aplicada</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div style="grid-column: 2; grid-row: 2;max-width: 1800px;">
+            <div style="
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0.3);
+                    border-radius: 15px;
+                    height: 100%;
+                    backdrop-filter: blur(3px);
+                ">
+                <div style="width: 100%; height: 100%; overflow: auto;">
+                    <div class="container_home" id="pageInicio">
+
+                        <div class="header">
+                            <h1>Código Cognitivo</h1>
+                            <p>Programação Básica Aplicada</p>
+                            <a href="#objetivos" class="cta-button">Começar Nosso Projeto</a>
+                        </div>
+
+                        <div style="width: 100%; height: 100%;" id="home">
+                            <div class="section">
+                                <h2>Contexto do Mercado</h2>
+                                <div class="stats-container">
+                                    <div>
+                                        <h3>A Quarta Revolução Industrial</h3>
+                                        <p>Vivemos uma era em que a tecnologia remodela o mercado de trabalho a uma
+                                            velocidade exponencial. A quarta revolução industrial e os avanços em IA,
+                                            computação em nuvem e automação transformaram as competências exigidas de um
+                                            profissional da área.</p>
+
+                                        <h3>O Desafio da Formação</h3>
+                                        <p>Muitos cursos focam exclusivamente em hard skills, negligenciando aspectos
+                                            fundamentais como comunicação, inteligência emocional e pensamento crítico.
+                                        </p>
+                                    </div>
+
+                                    <div class="stats-card">
+                                        <span class="stats-number">800mil</span>
+                                        <span class="stats-label">Profissionais de TI demandados no Brasil até
+                                            2025</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section">
+                                <h2>Dados do Mercado</h2>
+                                <div>
+                                    <h3>Demanda</h3>
+                                    <p>Segundo estudo da Associação Brasileira das Empresas de Tecnologia da Informação
+                                        e Comunicação (Brasscom, 2023), o Brasil demanda cerca de 800 mil profissionais
+                                        de TI até 2025</p>
+
+                                    <h3>Deficit na oferta</h3>
+                                    <p>Muitos cursos focam exclusivamente em hard skills, negligenciando aspectos
+                                        fundamentais como comunicação, inteligência emocional e pensamento crítico.
+                                    </p>
+                                </div>
+                                <div class="charts-grid">
+                                    <div class="chart-container">
+                                        <h3 class="chart-title">Demanda vs Formação Anual</h3>
+                                        <canvas id="demandChart"></canvas>
+                                    </div>
+
+                                    <div class="chart-container">
+                                        <h3 class="chart-title">Habilidades Mais Demandadas</h3>
+                                        <canvas id="skillsChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section" id="objetivos">
+                                <h2>Nossos Objetivos</h2>
+                                <div class="objectives-grid">
+                                    <div class="objective-card">
+                                        <div class="objective-icon">💻</div>
+                                        <h4>Programação Aplicada</h4>
+                                        <p>Ensinar fundamentos de programação de forma prática com lógica, algoritmos e
+                                            estruturas de dados aplicadas a problemas reais.</p>
+                                        <div class="sub-text" style="color: #00f5ff;" id="buttonVerMaisTecnico">Ver mais
+                                        </div>
+                                    </div>
+
+                                    <div class="objective-card">
+                                        <div class="objective-icon">🧠</div>
+                                        <h4>Soft Skills</h4>
+                                        <p>Desenvolver habilidades interpessoais como trabalho em equipe, liderança,
+                                            comunicação e inteligência emocional.</p>
+                                        <p class="sub-text" style="color: #00f5ff;" id="buttonVerMaisSocio">Ver mais</p>
+                                    </div>
+
+                                    <div class="objective-card">
+                                        <div class="objective-icon">🎯</div>
+                                        <h4>Preparação Profissional</h4>
+                                        <p>Preparar para processos seletivos com entrevistas técnicas e comportamentais,
+                                            fomentando aprendizado contínuo.</p>
+                                        <p class="sub-text" style="color: #00f5ff;" id="buttonVerMaisExercicio">Ver mais
+                                        </p>
+                                    </div>
+                                </div>
+                                <div id="fluxo_tecnico"
+                                    style="display: flex; align-items: center; justify-content: center; flex-direction: column;display: none;">
+                                    <h2>Fluxo Tecnico</h2>
+                                    <div>
+                                        <div style="width: 100%;height: 100%;">
+                                            <div id="roadmapWrapper">
+                                                <svg id="linhaConexao_tecnico"></svg>
+                                                <div id="fluxograma_tecnico"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="fluxo_socio"
+                                    style="display: flex;align-items: flex-start; justify-content: center; flex-direction: column;display: none;    padding: 20px;    overflow: auto;">
+                                    <h2>Fluxo Socio</h2>
+                                    <div>
+                                        <div style="width: 100%;height: 100%;">
+                                            <div id="roadmapWrapper">
+                                                <svg id="linhaConexao_socio"></svg>
+                                                <div id="fluxograma_socio"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section">
+                                <h2>Vantagens</h2>
+                                <div class="scope-grid">
+                                    <div class="scope-card inclusions">
+                                        <h3>COM A CODIGO COGNITIVO</h3>
+                                        <ul class="scope-list">
+                                            <li>Módulos interativos de programação (JS, HTML, Java)</li>
+                                            <li>Trilhas de soft skills (vídeos, textos, quizzes)</li>
+                                            <li>Simulações de entrevistas técnicas e comportamentais</li>
+                                            <li>Ferramentas de avaliação contínua</li>
+                                            <li>Sistema de gamificação e progresso</li>
+                                            <li>Blog com artigos sobre carreira e tecnologia</li>
+                                            <li>EXTRA CONTEUDOS INTERMEDIARIOS E AVANÇADOS</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="scope-card exclusions">
+                                        <h3>SEM A CODIGO COGNITIVO</h3>
+                                        <ul class="scope-list">
+                                            <li>Conhecimento do mercado desatualizado</li>
+                                            <li>Falta de prática com ferramentas reais de desenvolvimento</li>
+                                            <li>Ausência de simulações de entrevistas técnicas e soft skills</li>
+                                            <li>Aprendizado passivo, sem interações ou feedback</li>
+                                            <li>Dificuldade em medir progresso e competências adquiridas</li>
+                                            <li>Baixa motivação por falta de gamificação e engajamento contínuo</li>
+                                            <li>Dificuldade em se destacar em processos seletivos modernos</li>
+                                            <li>Desalinhamento com as demandas reais do mercado de tecnologia</li>
+                                            <li>Falta de uma trilha estruturada para evolução técnica e comportamental
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--
+                        <div style="width: 100%; height: 100%;" id="fluxograma">
+
+                        </div>
+                    -->
+                        <div style="    
+    width: 100%;
+    height: 100%;
+">
+                            <div id="roadmapWrapper">
+                                <svg id="linhaConexao"></svg>
+                                <div id="fluxograma"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz-container" id="pageQuiz" style="display: none;">
+                        <div class="quiz-header">
+                            <h1 class="quiz-title">Quiz de Programação</h1>
+                            <p class="quiz-subtitle">Teste seus conhecimentos!</p>
+                        </div>
+
+                        <div id="quiz-content">
+                            <div class="quiz-progress">
+                                <span class="progress-info">Pergunta <span id="current-question">1</span> de <span
+                                        id="total-questions">10</span></span>
+                                <span class="score">Pontuação: <span id="current-score">0</span></span>
+                            </div>
+
+                            <div class="question-container">
+                                <div class="question" id="question-text"></div>
+                                <div class="options" id="options-container"></div>
+                            </div>
+
+                            <button class="quiz-button" id="next-button" onclick="nextQuestion()" disabled>
+                                Próxima Pergunta
+                            </button>
+                        </div>
+
+                        <div class="result-container" id="result-container">
+                            <h2 class="result-title" id="result-title">Parabéns!</h2>
+                            <div class="final-score" id="final-score">0/10</div>
+                            <p class="result-message" id="result-message"></p>
+                            <button class="restart-button" onclick="restartQuiz()">Jogar Novamente</button>
+                        </div>
+                    </div>
+                    <div class="dash_container" id="pagedash" style="display: none;">
+                        <div style="padding-bottom: 40px;">
+                            <div class="stats-overview">
+                                <div class="stat-card">
+                                    <span class="stat-number" id="number_acertos">0</span>
+                                    <div class="stat-label">Acertos</div>
+                                    <div class="stat-description">Numero de acertos no quizz</div>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-number" id="number_interesse">0</span>
+                                    <div class="stat-label">Interesse</div>
+                                    <div class="stat-description">Numero de pessoas com o mesmo interesse</div>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <h3 class="chart-title">Acertividade do Quizz</h3>
+                                <canvas id="quizz"></canvas>
+                            </div>
+                        </div>
+                        <div class="stats-overview">
+                            <div class="stat-card">
+                                <span class="stat-number">6%</span>
+                                <div class="stat-label">Crescimento do Setor TI</div>
+                                <div class="stat-description">Previsão para 2024 no Brasil</div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">797k</span>
+                                <div class="stat-label">Novas Vagas</div>
+                                <div class="stat-description">Até 2025 no mercado tech</div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">R$ 5.3k</span>
+                                <div class="stat-label">Salário Médio</div>
+                                <div class="stat-description">Programador no Brasil</div>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">Top 10</span>
+                                <div class="stat-label">Posição Global</div>
+                                <div class="stat-description">Brasil no mercado tech</div>
+                            </div>
+                        </div>
+                        <div class="charts-grid">
+                            <div class="chart-container">
+                                <h3 class="chart-title">Crescimento do Mercado Tech Brasil</h3>
+                                <canvas id="growthChart"></canvas>
+                            </div>
+                            <div class="chart-container">
+                                <h3 class="chart-title">Faixas Salariais - Programadores</h3>
+                                <canvas id="salaryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+    <div class="card-overlay" id="cardOverlay">
+        <div class="card-modal">
+            <div class="card-header">
+                <h2 class="card-title" id="cardTitle">Título</h2>
+                <p class="card-subtitle" id="cardSubtitle">Subtítulo</p>
+                <button class="close-card" onclick="fecharCard()">×</button>
+            </div>
+            <div
+                style="display: grid; grid-template-columns: 1fr auto; padding: 30px; height: calc(100% - 120px - 80px);">
+                <div class="card-content" id="cardContent">
+                </div>
+                <div id="listComentes"></div>
+            </div>
+            <div style="width: 100%; height: 80px; display: grid; grid-template-columns: 1fr;">
+                <div style="display: flex; width: 100%;justify-content: center;">
+                    <div class="icon_like"></div>
+                    <div id="quant_like">0</div>
+                    <div class="icon_deslike"></div>
+                    <div id="quant_deslike">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="particles" id="particles"></div>
+    <div id="login_fundo" style="display: none;">
+        <div class="login-container page active" id="loginPage">
+            <div class="auth-header">
+                <h1 class="auth-title">Bem-vindo</h1>
+                <p class="auth-subtitle">Faça login em sua conta</p>
+            </div>
+            <div class="error-message" id="loginErrorMessage">
+                Credenciais inválidas. Tente novamente.
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail" class="form-label">Email</label>
+                    <input type="email" id="loginEmail" class="form-input" placeholder="Digite seu email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword" class="form-label">Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="loginPassword" class="form-input" placeholder="Digite sua senha"
+                            required>
+                        <button type="button" class="password-toggle"
+                            onclick="togglePassword('loginPassword')">👁️</button>
+                    </div>
+                </div>
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember">
+                        Lembrar-me
+                    </label>
+                    <a href="#" class="forgot-password" onclick="showPage('forgotPage')">Esqueci minha senha</a>
+                </div>
+                <button type="submit" class="auth-button" id="loginButton">
+                    Entrar
+                </button>
+            </form>
+            <div class="divider">
+                <span>ou</span>
+            </div>
+            <div class="auth-footer">
+                Não tem uma conta? <a href="#" onclick="showPage('registerPage')">Cadastre-se</a>
+            </div>
+        </div>
+        <div class="login-container page" id="forgotPage">
+            <button class="back-button" onclick="showPage('loginPage')">←</button>
+            <div class="auth-header">
+                <h1 class="auth-title">Recuperar Senha</h1>
+                <p class="auth-subtitle">Digite seu email para receber as instruções</p>
+            </div>
+            <div class="error-message" id="forgotErrorMessage">
+                Email não encontrado. Verifique o endereço digitado.
+            </div>
+            <div class="success-message" id="forgotSuccessMessage">
+                Senha resetada para Email
+            </div>
+            <form id="forgotForm">
+                <div class="form-group">
+                    <label for="forgotEmail" class="form-label">Email</label>
+                    <input type="email" id="forgotEmail" class="form-input" placeholder="Digite seu email" required>
+                </div>
+                <button type="submit" class="auth-button" id="forgotButton">
+                    Enviar Instruções
+                </button>
+            </form>
+            <div class="auth-footer">
+                Lembrou da senha? <a href="#" onclick="showPage('loginPage')">Fazer login</a>
+            </div>
+        </div>
+        <div class="login-container page" id="registerPage">
+            <button class="back-button" onclick="showPage('loginPage')">←</button>
+            <div class="auth-header">
+                <h1 class="auth-title">Criar Conta</h1>
+                <p class="auth-subtitle">Preencha os dados para se cadastrar</p>
+            </div>
+            <div class="error-message" id="registerErrorMessage">
+                Erro ao criar conta. Tente novamente.
+            </div>
+            <div class="success-message" id="registerSuccessMessage">
+                Conta criada com sucesso! Faça login para continuar.
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerName" class="form-label">Nome Completo</label>
+                    <input type="text" id="registerName" class="form-input" placeholder="Digite seu nome completo"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail" class="form-label">Email</label>
+                    <input type="email" id="registerEmail" class="form-input" placeholder="Digite seu email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword" class="form-label">Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="registerPassword" class="form-input" placeholder="Digite sua senha"
+                            required>
+                        <button type="button" class="password-toggle"
+                            onclick="togglePassword('registerPassword')">👁️</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirmar Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" class="form-input" placeholder="Confirme sua senha"
+                            required>
+                        <button type="button" class="password-toggle"
+                            onclick="togglePassword('confirmPassword')">👁️</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Área de interesse</label>
+                    <select id="areaInteresse" name="area" class="form-input">
+                        <option value="fullstack">Fullstack Developer</option>
+                        <option value="backend">Backend Developer</option>
+                        <option value="frontend">Frontend Developer</option>
+                        <option value="mobile">Mobile Developer</option>
+                        <option value="devops">DevOps Engineer</option>
+                        <option value="cloud">Cloud Engineer</option>
+                        <option value="cybersecurity">Cybersecurity Specialist</option>
+                        <option value="datascience">Data Scientist</option>
+                        <option value="ml">Machine Learning Engineer</option>
+                        <option value="game">Game Developer</option>
+                        <option value="qa">QA/Test Engineer</option>
+                        <option value="iot">IoT Developer</option>
+                        <option value="lowcode">Low-code/No-code Developer</option>
+                    </select>
+                </div>
+                <button type="submit" class="auth-button" id="registerButton">
+                    Criar Conta
+                </button>
+            </form>
+            <div class="auth-footer">
+                Já tem uma conta? <a href="#" onclick="showPage('loginPage')">Fazer login</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div style="    
+    display: grid;
+    position: absolute;
+    width: 100vw;
+    height: 80px;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 10fr 1fr;">
+        <div style="    
+        width: 100%;
+        grid-column: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        ">
+            <button type="submit" class="login-button" id="inicioButton"
+                style="width: 100px;margin-bottom:0px">Inicio</button>
+            <button type="submit" class="login-button" id="quizButton"
+                style="width: 100px;margin-bottom:0px;display: none;">Quiz</button>
+            <button type="submit" class="login-button" id="dashButton"
+                style="width: 150px;margin-bottom:0px;display: none;">DashBoard</button>
+            <button type="submit" class="login-button" id="fluxoButton"
+                style="width: 100px;margin-bottom:0px;display: none;">Fluxos</button>
+            <button type="submit" class="login-button" id="entrarButton"
+                style="width: 100px;margin-bottom:0px">Entrar</button>
+        </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>

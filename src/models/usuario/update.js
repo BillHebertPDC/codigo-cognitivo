@@ -1,9 +1,9 @@
 import { executar } from "../../utils/mysql.js";
 import { log } from "../../utils/log.js";
 
-export async function modelsUsuarioUpdate({ nome, email, senha,id }) {
+export async function modelsUsuarioUpdate({ email, senha }) {
     try {
-        let instrucao = `update usuario set nome = "${nome}", email = "${email}", senha = "${senha}" where id =${id};`
+        let instrucao = `update usuario set senha = "${senha}" where email ="${email}";`
         return await executar(instrucao)
     } catch (e) {
         log(import.meta.url, e)
